@@ -4,6 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+# proxy: 
+"proxy": {
+		"/auth/*": {
+			"target": "http://localhost:5000"
+		},
+		"/api/*": {
+			"target": "http://localhost:5000"
+		}
+	},
+
 In the project directory, you can run:
 
 ### `npm start`

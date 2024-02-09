@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node index.js",
 		"server": "nodemon index.js --ignore tests",
-		"client": "npm run start --prefix client",
+		"client": "npm run start --prefix frontend",
 		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
 	"author": "Naimat Ullah",
@@ -23,7 +23,7 @@
 		"mongoose": "^8.1.1",
 		"nodemon": "^3.0.3",
 		"passport": "^0.7.0",
-		"passport-google-oauth2": "^0.2.0",
+		"passport-google-oauth20": "^2.0.0",
 		"path-parser": "^6.1.0",
 		"puppeteer": "^22.0.0",
 		"redis": "^4.6.13",

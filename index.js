@@ -23,6 +23,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get("/", (req, res, next) => {
+	res.send("API is Running...");
+});
+
 require("./routes/authRoutes")(app);
 require("./routes/blogRoutes")(app);
 

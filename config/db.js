@@ -4,10 +4,7 @@ mongoose.set("strictQuery", false);
 
 const connectDB = async () => {
 	try {
-		const connect = await mongoose.connect("mongodb://0.0.0.0:27017/blog", {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-		});
+		const connect = await mongoose.connect("mongodb://0.0.0.0:27017/blog");
 
 		console.log("Connent: ", connect.connection.host);
 
