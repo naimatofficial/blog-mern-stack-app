@@ -3,12 +3,17 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"jest": {
+		"setupFilesAfterEnv": [
+			"./tests/setup.js"
+		]
+	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node index.js",
 		"server": "nodemon index.js --ignore tests",
 		"client": "npm run start --prefix frontend",
-		"dev": "concurrently \"npm run server\" \"npm run client\""
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"test": "jest"
 	},
 	"author": "Naimat Ullah",
 	"license": "ISC",

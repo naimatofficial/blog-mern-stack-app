@@ -11,6 +11,7 @@ class BlogList extends Component {
 
 	renderBlogs() {
 		return map(this.props.blogs, (blog) => {
+			console.log(this.props.blogs);
 			return (
 				<div className="card darken-1 horizontal" key={blog._id}>
 					<div className="card-stacked">

@@ -8,6 +8,7 @@ const connectDB = require("./config/db");
 require("./models/User");
 require("./models/Blog");
 require("./services/passport");
+require("./services/cache");
 
 connectDB();
 
