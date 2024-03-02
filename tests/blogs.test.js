@@ -4,14 +4,23 @@ let page;
 
 beforeEach(async () => {
 	page = await Page.build();
-	page.goto("http://localhost:3000");
+	await page.goto("http://localhost:3000");
 });
 
 afterEach(async () => {
 	await page.close();
 });
 
-test("When login in, show the blogs from", async () => {
-	await page.login();
-	await page.goto("http://localhost:3000/blogs");
+// Nested Describe tests
+describe("When logged in", () => {
+	beforeEach(async () => {
+		await page.login();
+		await page.click("a.btn-floating");
+	});
+
+	test("Can see the create blogs form", async () => {
+		const label = await page.getContentsOf("form label");
+
+		expect(label).toEqual("Blog Title");
+	});
 });

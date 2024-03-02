@@ -1,3 +1,5 @@
+jest.setTimeout(30000);
+
 require("../models/User");
 
 const mongoose = require("mongoose");
@@ -8,4 +10,4 @@ mongoose.connect(keys.mongoURI);
 
 afterAll(async () => {
 	await mongoose.disconnect();
-}); 
+});
