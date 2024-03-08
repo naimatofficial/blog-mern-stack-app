@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
+const keys = require("./keys");
 
 mongoose.set("strictQuery", false);
 
 const connectDB = async () => {
 	try {
-		const connect = await mongoose.connect("mongodb://0.0.0.0:27017/blog");
-
-		console.log("Connent: ", connect.connection.host);
+		const connect = await mongoose.connect(keys.mongoURI);
 
 		console.log(`Mongodb connected: ${connect.connection.host}`);
 	} catch (error) {

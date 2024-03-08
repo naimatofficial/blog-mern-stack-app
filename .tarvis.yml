@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "20"
+dist: trusty
+services:
+  - mongodb
+  - redis-server
+env:
+  - NODE_ENV=ci
+  - PORT=3000
+cache:
+  directories:
+    - node_modules
+    - frontend/node_modules
+
+install:
+  - npm install
+
+# nohup: no hung up create a shell for node server
+script:
+  - nohup npm run start &
+  # set aruond 3 seconds
+  - sleep 3
+  - npm run test

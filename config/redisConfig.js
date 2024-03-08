@@ -1,7 +1,7 @@
 const redis = require("redis");
+const keys = require("./keys");
 
-const redisUrl = "redis://127.0.0.1:6379";
-const client = redis.createClient(redisUrl);
+const client = redis.createClient(keys.redisUrl);
 
 client.on("error", (err) => console.log("Redis Client Error", err));
 
